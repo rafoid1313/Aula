@@ -58,6 +58,8 @@ Salvar um instantâneo das alterações preparadas no histórico do projeto, cri
 O arquivo muda para o estado "committed" (ou "unmodified") no repositório local.
 
 
+
+
  Etapa 3 – Histórico e alterações
 
 1. O que o comando git diff mostra?  
@@ -73,6 +75,8 @@ Usar o comando git branch no seu terminal para listar todos os branches locais e
 
 2. O que acontece se você rodar git merge nova-feature estando na branch principal?
 o Git tentará mesclar as alterações da nova-feature na main. Se não houver conflitos, o Git criará um novo commit que contém todas as alterações de ambas as branches. Se houverem conflitos, o Git irá parar o processo e pedir para você resolvê-los manualmente antes de finalizar a mesclagem. 
+
+
 
 
 3. Conectando ao GitHub
