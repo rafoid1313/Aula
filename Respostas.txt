@@ -1,0 +1,54 @@
+1. Por que o Git é considerado um sistema de controle de versão
+distribuído?
+
+Porque cada usuário ou desenvolvedor pode ter uma cópia do repositório com todo histórico de mudanças de um projeto em um repositório local. 
+Ou seja o trabalho pode ser feito offline este pode ser restaurado a partir de qualquer clone local.
+
+2. Qual a diferença entre working directory, staging area e repository?
+
+Working directory é onde se edita os arquivos, staging área é um local de preparação onde você seleciona alterações específicas para o commit e repository é o histórico completo do projeto com todos commits armazenados.
+
+3. Para que serve o comando git clone ?
+
+Faz uma cópia completa de um repositório Git existente, baixando todos os arquivos, histórico de commits e branches para um novo diretório na sua máquina local,
+
+4. Onde estão implementados fisicamente working directory, staging area
+e repository ? 
+
+São implementados no sistema de arquivos local de um projeto, ou seja armazenados onde se salva os dados.
+
+5. Quais os estados de um arquivo no repositório do git ? 
+
+São Modificado (modified), Preparado (staged) e Confirmado (committed). Um arquivo pode também estar no estado Não Rastreado (untracked) e Não Modificado (unmodified).
+
+6. Explique as possíveis transições de estado de um arquivo no repositório do git ? 
+
+Modificado (Modified): O arquivo foi alterado, mas ainda não foi preparado para o próximo commit.
+Preparado (Staged): O arquivo modificado foi adicionado à área de preparo com o comando git add, indicando que ele será incluído no próximo commit.
+Confirmado (Committed): As alterações foram salvas com segurança no banco de dados do Git, e o arquivo está em seu estado finalizado, como parte do histórico do projeto. 
+Outros estados
+Não Rastreado (Untracked): O arquivo foi criado recentemente e não faz parte do repositório, portanto, o Git não está rastreando-o.
+Não Modificado (Unmodified): Um arquivo rastreado que não foi alterado desde o último commit. Ele está no estado neutro. 
+
+
+
+Pergunta: Qual foi a mensagem exibida após o comando git init e o que ela significa na prática?
+
+"Initialized empty Git repository in /caminho/do/seu/projeto/.git/" ou similar, indicando que um repositório Git foi criado e está pronto para ser usado. Significa que um subdiretório .git foi criado para armazenar o histórico do projeto, metadados e configurações, permitindo que o Git comece a monitorar as alterações nos arquivos a partir daquele momento. 
+
+
+1. Qual o estado do arquivo antes e depois do git add ? 💡 O estado do arquivo é "não rastreado" mas não está na área de staging. Depois do git add, o arquivo passa para o estado "staged" ou "preparado".
+2. O que significa o estado untracked e tracked ? 💡  "untracked" significa que o Git não está acompanhando o arquivo, sendo este um novo arquivo no repositório que ainda não foi adicionado ao "staging area" ou ao histórico de commits. Já "tracked" refere-se a qualquer arquivo que já está sob o controle do Git, seja ele modificado ou não. 
+3. Qual o objetivo do git commit ? 💡 Resposta: é salvar um instantâneo das alterações preparadas no histórico do projeto, criando um ponto de registro permanente com informações como autor, data e uma mensagem descritiva. 
+4. Qual o estado do arquivo após o git commit ? 💡 O arquivo muda para o estado "committed" (ou "unmodified") no repositório local.
+
+
+1. O que o comando git diff mostra? 💡 As diferenças entre várias fontes em um repositório Git, como entre o diretório de trabalho e o índice (a área de preparação), entre commits diferentes, entre branches, ou entre o repositório local e o remoto.
+2. Qual commit está atualmente apontado por HEAD?
+💡 Resposta: e98c5c6 (HEAD -> master) Primeiro commit (ele aponta para o commit mais recente do branch atual.)
+
+
+1. Como verificar em qual branch você está?  usar o comando git branch no seu terminal para listar todos os branches locais e um asterisco (*) indicará o branch atual.
+
+2. O que acontece se você rodar git merge nova-feature estando na branch principal?
+o Git tentará mesclar as alterações da nova-feature na main. Se não houver conflitos, o Git criará um novo commit que contém todas as alterações de ambas as branches. Se houverem conflitos, o Git irá parar o processo e pedir para você resolvê-los manualmente antes de finalizar a mesclagem. 
