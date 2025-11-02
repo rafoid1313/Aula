@@ -1,3 +1,5 @@
+ 1. Introdução e Conceitos
+
 1. Por que o Git é considerado um sistema de controle de versão
 distribuído?
 
@@ -32,23 +34,63 @@ Não Modificado (Unmodified): Um arquivo rastreado que não foi alterado desde o
 
 
 
+
+ 2. Prática com Git Local
+ 
+Etapa 1 – Criar o repositório
+
 Pergunta: Qual foi a mensagem exibida após o comando git init e o que ela significa na prática?
 
-"Initialized empty Git repository in /caminho/do/seu/projeto/.git/" ou similar, indicando que um repositório Git foi criado e está pronto para ser usado. Significa que um subdiretório .git foi criado para armazenar o histórico do projeto, metadados e configurações, permitindo que o Git comece a monitorar as alterações nos arquivos a partir daquele momento. 
+"Initialized empty Git repository in C:/Users/rafoi/aula-git/.git/". Indica que um repositório Git foi criado e está pronto para ser usado. Significa que um subdiretório .git foi criado para armazenar o histórico do projeto, metadados e configurações, permitindo que o Git comece a monitorar as alterações nos arquivos a partir daquele momento. 
+
+Etapa 2 – Adicionar arquivo e fazer commit
+
+1. Qual o estado do arquivo antes e depois do git add ? 
+O estado do arquivo é "não rastreado" mas não está na área de staging. Depois do git add, o arquivo passa para o estado "staged" ou "preparado".
+
+2. O que significa o estado untracked e tracked ?
+Untracked significa que o Git não está acompanhando o arquivo, sendo este um novo arquivo no repositório que ainda não foi adicionado ao "staging area" ou ao histórico de commits. Já "tracked" refere-se a qualquer arquivo que já está sob o controle do Git,  seja ele modificado ou não. 
+
+3. Qual o objetivo do git commit ? 
+Salvar um instantâneo das alterações preparadas no histórico do projeto, criando um ponto de registro permanente com informações como autor, data e uma mensagem descritiva. 
+
+4. Qual o estado do arquivo após o git commit ? 
+O arquivo muda para o estado "committed" (ou "unmodified") no repositório local.
 
 
-1. Qual o estado do arquivo antes e depois do git add ? 💡 O estado do arquivo é "não rastreado" mas não está na área de staging. Depois do git add, o arquivo passa para o estado "staged" ou "preparado".
-2. O que significa o estado untracked e tracked ? 💡  "untracked" significa que o Git não está acompanhando o arquivo, sendo este um novo arquivo no repositório que ainda não foi adicionado ao "staging area" ou ao histórico de commits. Já "tracked" refere-se a qualquer arquivo que já está sob o controle do Git, seja ele modificado ou não. 
-3. Qual o objetivo do git commit ? 💡 Resposta: é salvar um instantâneo das alterações preparadas no histórico do projeto, criando um ponto de registro permanente com informações como autor, data e uma mensagem descritiva. 
-4. Qual o estado do arquivo após o git commit ? 💡 O arquivo muda para o estado "committed" (ou "unmodified") no repositório local.
+ Etapa 3 – Histórico e alterações
 
-
-1. O que o comando git diff mostra? 💡 As diferenças entre várias fontes em um repositório Git, como entre o diretório de trabalho e o índice (a área de preparação), entre commits diferentes, entre branches, ou entre o repositório local e o remoto.
+1. O que o comando git diff mostra?  
+As diferenças entre várias fontes em um repositório Git, como entre o diretório de trabalho e o índice (a área de preparação), entre commits diferentes, entre branches, ou entre o repositório local e o remoto.
 2. Qual commit está atualmente apontado por HEAD?
-💡 Resposta: e98c5c6 (HEAD -> master) Primeiro commit (ele aponta para o commit mais recente do branch atual.)
 
+e98c5c6 (HEAD -> master) Primeiro commit (ele aponta para o commit mais recente do branch atual.)
 
-1. Como verificar em qual branch você está?  usar o comando git branch no seu terminal para listar todos os branches locais e um asterisco (*) indicará o branch atual.
+ Etapa 4 – Trabalhando com Branches
+ 
+1. Como verificar em qual branch você está?  
+Usar o comando git branch no seu terminal para listar todos os branches locais e um asterisco (*) indicará o branch atual.
 
 2. O que acontece se você rodar git merge nova-feature estando na branch principal?
 o Git tentará mesclar as alterações da nova-feature na main. Se não houver conflitos, o Git criará um novo commit que contém todas as alterações de ambas as branches. Se houverem conflitos, o Git irá parar o processo e pedir para você resolvê-los manualmente antes de finalizar a mesclagem. 
+
+
+3. Conectando ao GitHub
+
+1. O que significa o -u no comando git push -u origin main ?
+Permite que você envie (ou em tradução literal, empurre) os commits de sua branch e repositório Git local para o seu repositório remoto.
+
+2. Como verificar os remotes configurados no repositório?
+Utilizar o comando git remote -v ou seja uma URL remota é outra forma de o Git dizer "o lugar onde seu código é armazenado"
+
+
+Qual etapa foi mais difícil?
+Não estava conseguindo linkar meu dispositivo local a URL no site do github. Precisei ler algumas documentações para entender em como configurar as credenciais do windows e "apontar" para meu usuario no site.
+
+Como o Git ajuda na colaboração?
+Ao permitir que vários usuários e desenvolvedores trabalhem simultaneamente em um projeto, sem sobrescrever o trabalho uns dos outros. Existem várias outras qualidades tais como: 
+gerenciamento de mudanças, resolução de conflitos, Revisão e feedback e controle de acesso.
+
+Que diferença faz ter um repositório remoto?
+São versões de seu repositório hospedado na Internet ou em uma rede qualquer, ou até localmente no seu dispositivo. Você pode ter vários deles, cada um dos quais geralmente é ou somente leitura ou leitura/escrita.
+Então a portabilidade e a possibilidade de acessar de qualquer lugar te dá a liberdade de conectar a qualquer momento. Você pode trabalahr localmente e posteriormente efetuar as atualizações.
